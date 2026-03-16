@@ -1,0 +1,41 @@
+server:
+  port: 5004
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5003/eureka
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}:${random.int}
+    preferIpAddress: true
+
+spring:
+  application:
+    name: ReconTxns
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/Testing
+    
+    #driver-class-name: org.postgresql.Driver
+    #url: jdbc:postgresql://localhost:5432/CompleteReconTxns?currentSchema=public
+    
+    username: root
+    password: nand123
+    
+    #driver-class-name: oracle.jdbc.OracleDriver
+    #url: jdbc:oracle:thin:@localhost:1521/free
+    #url: jdbc:oracle:thin:@10.30.35.50:1921/recon
+    #url: jdbc:oracle:thin:@10.69.35.50:1921/recon
+    #username: tmbrecontxns
+    #password: recon123
+  jpa:
+    database: default
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"
+  #file: /home/kumar/Documents/log4j/ReconTxns.log
+  file: /home/reconuat/Documents/log4j/ReconTxns.log 
