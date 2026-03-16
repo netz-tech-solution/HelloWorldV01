@@ -17,4 +17,10 @@ public class HelloController {
     public String world() {
         return "Class level mapping!";
     }
+    
+    @RequestMapping("")
+    public String getV02() {
+        return "Hello World Version 2";
+    }
+
 }
