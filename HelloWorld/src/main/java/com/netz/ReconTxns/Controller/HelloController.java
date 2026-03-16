@@ -18,6 +18,12 @@ public class HelloController {
         return "Class level mapping!";
     }
     
+    
+    @RequestMapping("/thirdcommit")
+    public String getV03() {
+        return "Third commit";
+    }
+    
     @RequestMapping("")
     public String getV02() {
         return "Hello World Version 2";
